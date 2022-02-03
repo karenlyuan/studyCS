@@ -4,7 +4,8 @@ public class SinglyLinkedList {
 	private int size;
 
 	public SinglyLinkedList() {
-		/* to be completed */
+		size = 0;
+		head = new Node(1);
 	}
 
 	public int size() {
@@ -12,7 +13,6 @@ public class SinglyLinkedList {
 	}
 
 	public String toString() {
-		/* to be completed */
 		
 		String builder = "";
 		Node curr = head;
@@ -31,18 +31,41 @@ public class SinglyLinkedList {
 
 	public Node get(int index){
 		/* to be completed */
-		return null;
+		Node curr = head;
+		
+		for(int i=0; i<index; i++) {
+		    if(curr.next != null) {
+		        curr = curr.next;
+		    }
+		}
+		
+		return curr;
 	}
 
 	public Node remove(int n) {
 		/* to be completed */
-		return null;
+		
+		Node curr = head;
+		
+		for(int i=0; i<n; i++) {
+		    if(curr.next != null) {
+		        curr = curr.next;
+		    }
+		}
+		
+		Node temp = curr;
+		
+		curr = null;
+		
+		return temp;
+		
 	}
 
 	public void add(Node n) {
 		/* to be completed */
+		Node newNode = new Node(n);
+		size++;
 	}
-
 
 
 }
