@@ -1,12 +1,16 @@
 public class SinglyLinkedList {
 
+	//private SinglyLinkedList list = new SinglyLinkedList();
 	Node head;
+	Node tail;
 	private int size;
 
 	public SinglyLinkedList() {
 		size = 0;
-		head = new Node(1);
+		head = new Node(11);
+		tail = new Node(7);
 	}
+
 
 	public int size() {
 		return size;
@@ -65,6 +69,13 @@ public class SinglyLinkedList {
 		/* to be completed */
 		Node newNode = new Node(n);
 		size++;
+		if(head == null) {
+		    head = newNode;
+		    tail = newNode;
+		} else {
+		    tail.next = newNode;
+		    tail = newNode;
+		}
 	}
 
 
