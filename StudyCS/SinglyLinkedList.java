@@ -10,7 +10,7 @@ public class SinglyLinkedList {
 		head = new Node(11);
 		tail = new Node(7);
 	}
-
+	
 
 	public int size() {
 		return size;
@@ -41,6 +41,7 @@ public class SinglyLinkedList {
 		    if(curr.next != null) {
 		        curr = curr.next;
 		    }
+		    
 		}
 		
 		return curr;
