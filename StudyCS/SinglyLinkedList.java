@@ -10,7 +10,6 @@ public class SinglyLinkedList {
 		head = new Node(11);
 		tail = new Node(7);
 	}
-	
 
 	public int size() {
 		return size;
@@ -18,24 +17,31 @@ public class SinglyLinkedList {
 
 	public String toString() {
 		
-		String builder = "";
+		String builder = "[";
 		Node curr = head;
 		
 		while(curr.next != null) {
-		    builder += (Integer) curr.getData();
+		    builder += (String) curr.getData();
 		    
 		    //go to the next node
 		    curr = curr.next;
+		    builder += ",";
 		    
-		}
-		
+	    }
+		builder += "]";
 		
 		return builder;
 	}
 
 	public Node get(int index){
 		/* to be completed */
+
 		Node curr = head;
+		
+		if(index < 0) {
+		    return null;
+		}
+		
 		
 		for(int i=0; i<index; i++) {
 		    if(curr.next != null) {
@@ -52,6 +58,10 @@ public class SinglyLinkedList {
 		
 		Node curr = head;
 		
+		if(n < 0) {
+		    return null;
+		}
+		
 		for(int i=0; i<n; i++) {
 		    if(curr.next != null) {
 		        curr = curr.next;
@@ -61,6 +71,8 @@ public class SinglyLinkedList {
 		Node temp = curr;
 		
 		curr = null;
+		
+		size--;
 		
 		return temp;
 		
