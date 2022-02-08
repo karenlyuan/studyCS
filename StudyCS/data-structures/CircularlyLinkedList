@@ -1,1 +1,31 @@
-
+public class CircularlyLinkedList{
+    
+    public boolean isCircular(SinglyLinkedList list){
+        /* to be completed by student */
+        
+        Node head = new Node(1);
+        boolean circular = true;
+        
+        Node curr = head;
+        
+        if(list.size() <= 0) {
+            circular = false;
+        }
+        
+        for(int i=0; i<list.size(); i++) {
+            if(curr.next == null) {
+                circular = false;
+            } else {
+                circular = true;
+                curr = curr.next;
+            }
+            
+        }
+        
+        return circular;
+        
+    }
+    
+    
+    
+}
