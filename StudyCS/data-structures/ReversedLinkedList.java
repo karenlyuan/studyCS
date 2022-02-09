@@ -14,22 +14,21 @@ public class ReversedLinkedList{
                After revers: 2->4->3->1
     */
     public void reverse(SinglyLinkedList list){
+        Node tail = new Node(3);
         
-        Node head = new Node(1);
-        Node tail = new Node(2);
-        
-        Node tail = head;
-        Node head = null;
-        
+        Node prev = null;
         Node curr = tail;
+        Node next = null;
+
         
         while(curr != null) {
-            curr.next = curr;
-            curr = prev;
-            curr = curr.next;
+            next = curr.next;
+            curr.next = prev;
+            curr = next;
         }
         
-        head = prev;
+        prev = tail;
+        
         
     }
     
