@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class BinaryTree {
 
@@ -63,26 +65,32 @@ public class BinaryTree {
 	//method that returns string representation of binary tree elements / nodes
 	public String bfs() {
 		//breadth first traversal
-		String builder = "";
+		Queue<Node> queue = new LinkedList<Node>();
+
+		queue.add(head);
 		
-		Node current = head;
-		
-		for(int i=0; i<size; i++) {
-			builder += head.toString();
-			while(current.left != null) {
-				head = current.left;
-				builder += head.toString();
+		while(queue.size() > 0) {
+			Node temp = queue.poll();
+			System.out.println(temp.getData()+"");
+			
+			//Enqueue left child
+			if(temp.left != null) {
+				queue.add(temp.left);
 			}
-			while(current.right != null) {
-				head = current.right;
-				builder += head.toString();
+			
+			//Enqueue right child
+			if(temp.right != null) {
+				queue.add(temp.right);
 			}
 		}
+		
 		return "";
 	}
 	
 	public String dfs() {
 		//pre-order depth-first-search traversal
+		
+		
 		return "";
 	}
 	
