@@ -1,12 +1,12 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class BinaryTree {
+public class BinarySearchTree {
 
 	Node head;
 	int size;
 	
-	public BinaryTree() {
+	public BinarySearchTree() {
 		head = null;
 		size = 0;
 		
@@ -94,8 +94,26 @@ public class BinaryTree {
 		return "";
 	}
 	
-	public static void main(String[] args) {
+	String printPostorder(Node node) {
+		if(node == null) {
+			return "";
+		}
 		
+		return printPostorder(node.left) + printPostorder(node.right)+ (node.getData() + "");  
+	}
+	
+	String printPostorder() {
+		return printPostorder(head);
+	}
+	
+	public static void main(String[] args) {
+		BinarySearchTree t = new BinarySearchTree();
+		t.add(new Node(10));
+		t.add(new Node(1));
+		t.add(new Node(11));
+		t.add(new Node(0));
+		
+		System.out.println(t.printPostorder());
 		
 	}
 
