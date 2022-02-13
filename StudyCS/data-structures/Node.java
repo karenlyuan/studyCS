@@ -1,4 +1,4 @@
-pubblic class Node{
+public class Node{
 	private int data;
 	public Node left; 
 	public Node right;
