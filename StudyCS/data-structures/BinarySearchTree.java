@@ -91,7 +91,7 @@ public class BinarySearchTree {
 		if(n == null) {
 			builder += "";
 		} else {
-			System.out.println(head.getData());
+			System.out.println(n.getData());
 			dfs(n.left);
 			dfs(n.right);
 		}
