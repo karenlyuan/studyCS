@@ -84,7 +84,7 @@ public class BinarySearchTree {
 		return String.valueOf(data);
 	}
 
-	public String dfs() {
+	public String dfs(Node n) {
 		//PRE-ORDER depth-first-search traversal
 		String builder = "";
 		
