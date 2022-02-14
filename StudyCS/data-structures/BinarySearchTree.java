@@ -85,10 +85,18 @@ public class BinarySearchTree {
 	}
 
 	public String dfs() {
-		//pre-order depth-first-search traversal
+		//PRE-ORDER depth-first-search traversal
+		String builder = "";
 		
+		if(n == null) {
+			builder += "";
+		} else {
+			System.out.println(head.getData());
+			dfs(n.left);
+			dfs(n.right);
+		}
 		
-		return "";
+		return builder;
 	}
 	
 	String printPostorder(Node node) {
