@@ -8,24 +8,20 @@ public class CircularlyLinkedList{
         
         Node curr = head;
         
-        if(list.size() <= 0) {
-            circular = false;
-        }
-        
-        for(int i=0; i<list.size(); i++) {
-            if(curr.next == null) {
-                circular = false;
-            } else {
-                circular = true;
-                curr = curr.next;
+        if(head == null) {
+            circular = true;
+        } else {
+            Node node = head.next;
+            
+            while(node != null && node != head) {
+                node = node.next;
             }
+            
+            circular = (node != null);
             
         }
         
         return circular;
         
     }
-    
-    
-    
 }
